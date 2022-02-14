@@ -1,0 +1,104 @@
+.evolution-graph {
+  font-family: Arial;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.evolution-graph * {
+  box-sizing: border-box;
+}
+
+.evolution-graph__title {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.evolution-graph__bars-container {
+  position: relative;
+}
+
+.evolution-graph__bar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.evolution-graph__bar__label {
+  display: flex;
+  align-items: center;
+}
+
+.evolution-graph__bar__track {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.evolution-graph__bar__track__fill {
+  position: relative;
+}
+.evolution-graph__bar__data {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  right: 0;
+}
+
+.evolution-graph__bar__track__value {
+  white-space: nowrap;
+  padding-left: 4px;
+}
+
+.evolution-graph__bar__image-wrapper {
+  flex-direction: column;
+  display: flex;
+}
+
+.evolution-graph__timeline {
+  width: 100%;
+  margin-top: 24px;
+  height: 14px;
+  position: relative;
+  margin-bottom: 110px;
+}
+
+.evolution-graph__timeline__track {
+  display: flex;
+  justify-content: space-between;
+}
+
+.evolution-graph__timeline__track__fill {
+  position: absolute;
+  left: 0;
+}
+
+.evolution-graph__timeline__track__marker {
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.evolution-graph__timeline__track__marker__label {
+  position: absolute;
+  transform-origin: left;
+}
+
+.evolution-graph__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.evolution-graph__actions__bt {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
