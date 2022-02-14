@@ -37,6 +37,7 @@ class Timeline extends Element {
     });
     track.setStyle("height", `${this.trackThickness}px`);
     track.setStyle("background-color", this.trackColor);
+    track.setStyle("border-radius", `${this.trackThickness / 2}px`);
 
     const trackFill = new Element({
       className: "evolution-graph__timeline__track__fill",
@@ -50,6 +51,7 @@ class Timeline extends Element {
       const marker = new Element({
         className: `evolution-graph__timeline__track__marker marker-${index}`,
       });
+      marker.setStyle("transition", `all ${graph.stepInterval}ms linear`);
       marker.setStyle("width", `${this.markerSize}px`);
       marker.setStyle("height", `${this.markerSize}px`);
       marker.setStyle("background-color", this.markerColor);
@@ -93,6 +95,12 @@ class Timeline extends Element {
       "width",
       `calc(${(currentStep / (graph.labels.length - 1)) * 100}%)`
     );
+
+    this.elements.markers.forEach((marker, index) => {
+      currentStep >= index
+        ? marker.setStyle("background-color", this.trackFillColor)
+        : marker.setStyle("background-color", this.markerColor);
+    }, graph.stepInterval);
   };
 }
 
