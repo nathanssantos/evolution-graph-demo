@@ -33,7 +33,7 @@ class Bar extends Element {
   prepare = ({ graph }) => {
     this.setStyle(
       "transition",
-      `all ${graph.stepInterval}ms linear, top ${graph.transitionTopInterval}ms linear`
+      `all ${graph.stepInterval}ms linear, top ${graph.barTransitionTopInterval}ms linear`
     );
 
     const label = new Element({
@@ -108,6 +108,7 @@ class Bar extends Element {
     this.position = position;
 
     this.setStyle("z-index", position + 1);
+    this.elements.data.setStyle("z-index", position + 1);
     this.setStyle("top", `${(this.thickness + graph.gap) * this.position}px`);
     this.elements.trackFill.setStyle(
       "width",

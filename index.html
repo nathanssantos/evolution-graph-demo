@@ -175,13 +175,33 @@
       const graph = new EvolutionGraph({
         data,
         labels,
+        autoPlay: false,
+        barDataGap: 4,
+        barLabelWidth: 100,
         barThickness: 30,
+        barTransitionTopInterval: 750,
+        className: "custom-evolution-graph",
+        gap: 10,
+        order: "desc",
+        showActionButtons: true,
+        stepInterval: 1500,
+        timelineTrackColor: "#cecece",
+        timelineTrackFillColor: "#0984e3",
+        timelineMarkerColor: "#cecece",
+        timelineMarkerSize: 14,
+        timelineTrackThickness: 4,
+        onChange: (currentStep) => {
+          console.log(currentStep);
+        },
         renderBarValue: (value) => `${value}k`,
         renderGraphTitle: (title) => `Date - ${title}`,
-        onChange: (currentStep) => {
-          console.log("Evolution Graph currentStep", currentStep);
-        },
       });
+
+      // graph.goToNextStep()
+      // graph.goToPreviousStep()
+      // graph.pause()
+      // graph.play()
+      // graph.setCurrentStep(3)
 
       graph.render("#evolution-graph-example");
     </script>
